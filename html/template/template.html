@@ -1,0 +1,599 @@
+<!DOCTYPE html>
+<html lang="ko">
+	<head>
+	    <title>사이트 타이틀명</title>
+	    <meta http-equiv="X-UA-Compatible" content="IE=Edge"/>
+	    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+	    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+	    
+	    <!-- css -->
+	    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Nanum+Gothic:400,700&subset=korean"><!-- 구글 웹폰트 -->
+	    <link rel="stylesheet" type="text/css" href="../../css/lib/jquery-ui.css">
+	    <link rel="stylesheet" type="text/css" href="../../css/lib/select2.min.css">
+	    <link rel="stylesheet" type="text/css" href="../../css/admin.css">
+
+	    <!-- js -->
+	    <script type="text/javascript" src="../../js/lib/jquery-3.3.1.min.js"></script>
+  		<script type="text/javascript" src="../../js/lib/modernizr-3.6.0.min.js"></script>
+	    <script type="text/javascript" src="../../js/lib/jquery-ui.min.js"></script>
+	    <script type="text/javascript" src="../../js/lib/select2.min.js"></script>
+	</head>
+
+	<body>
+		<!-- wrap -->
+		<div class="wrap">
+			<!-- header -->
+			<div class="header">
+				<h1>ADMIN</h1>
+				<ul class="gnb clearfix">
+					<li><a href="javascript:;" class="on">EVENT</a></li>
+					<li><a href="javascript:;">CAMPAIGN</a></li>
+					<li><a href="javascript:;">PUBLIC</a></li>
+					<li><a href="javascript:;">USER</a></li>
+				</ul>
+			</div><!-- //header -->
+
+			<!-- container -->
+			<div class="container">
+				<!-- side-navBox -->
+				<div class="side-navBox">
+					<div class="log_info">
+						<p class="tit">안녕하세요</p>
+						<ul>
+							<li>접속자  : 사번123456 (홍길동)</li>
+							<li>접속시간 : 2018/04/01 12:00:00</li>
+						</ul>
+						<a href="javascript:;" class="btn_show">권한보기</a>
+					</div>
+
+					<div class="nav_area">
+						<p class="tit">이벤트 성과분석</p>
+						<ul class="nav">
+							<li><a href="javascript:;">이벤트 실적</a></li>
+							<li><a href="javascript:;">일간 이벤트 트래픽</a></li>
+							<li><a href="javascript:;" class="on">일간 이벤트 실적</a></li>
+						</ul>
+					</div>
+
+					<div class="bot_area">
+						<a href="javascript:;" class="btn_logout">로그아웃</a>
+
+						<p class="copy_txt">COPYRIGHT ⓒ 회사명<br />All RIGHTS RESERVED.</p>
+					</div>
+				</div><!-- //side-navBox -->
+
+				<!-- content -->
+				<div class="content">
+
+					<!-- section -->
+					<div class="section">
+						<h2 class="p_tit">input, passwords, tel, number, search, textarea</h2>
+
+						<input type="text" placeholder="텍스트text" />
+						<input type="password" placeholder="패스워드password" />
+						<input type="tel" placeholder="전화tel" />
+						<input type="number" placeholder="숫자number" />
+						<input type="search" placeholder="검색search" />
+
+						<br /><br />
+						
+						<textarea rows="5" style="width:100%;" placeholder="텍스트AREAarea"></textarea>
+
+						<br /><br /><br />
+
+						<h2 class="p_tit">달력 data-ui="datepicker"</h2>
+
+						<input type="text" data-ui="datepicker" value="2018-04-11" maxlength="10" style="width:150px;">
+
+						<br /><br /><br />
+
+						<h2 class="p_tit">셀렉트박스 data-ui="selecter"</h2>
+
+						<select style="width:150px;" data-ui="selecter">
+							<option value="" selected="">All</option>
+							<option value="1">옵션11</option>
+							<option value="2">옵션2222</option>
+							<option value="3">옵션33333333</option>
+						</select>
+
+						<br /><br /><br />
+
+						<h2 class="p_tit">버튼 data-ui="btnS" class="btn-s"</h2>
+
+						<input type="button" data-ui="btnS" class="btn-s v_01" value="버튼1">
+						<button data-ui="btnS" class="btn-s v_02">버튼2</button>
+						<a href="#" data-ui="btnS" class="btn-s v_03">버튼3</a>
+
+						<br /><br /><br />
+
+						<h2 class="p_tit">버튼 data-ui="btnS" class="btn-xs"</h2>
+
+						<input type="button" data-ui="btnS" class="btn-xs v_01" value="버튼1">
+						<button data-ui="btnS" class="btn-xs v_02">버튼2</button>
+						<a href="#" data-ui="btnS" class="btn-xs v_03">버튼3</a>
+
+						<br /><br /><br />
+
+						<h2 class="p_tit">툴팁 data-tooltip="툴팁내용"</h2>
+
+						<input type="text" placeholder="마우스를 위로 올리면 툴팁이 나옵니다." data-tooltip="툴팁이 나옵니다용~" style="width:300px;">
+
+						<br /><br /><br />
+
+						<h2 class="p_tit">상단 sort_box</h2>
+
+						<!-- sort_box -->
+						<div class="sort_box clearfix">
+							<div class="fl_L">
+								<input type="text" data-ui="datepicker" value="2018-04-11" maxlength="10" style="width:150px;"> ~ 
+								<input type="text" data-ui="datepicker" value="2018-04-26" maxlength="10" style="width:150px;">
+								<input type="button" data-ui="btnS" class="btn-s v_01" value="기간 조회">
+								<span class="sort_label">사이트</span>
+								<select style="width:150px;" data-ui="selecter">
+									<option value="" selected="">All</option>
+									<option value="사이트1">사이트1</option>
+									<option value="사이트2">사이트2</option>
+									<option value="사이트3">사이트3</option>
+								</select>
+								<span class="sort_label">담당</span>
+								<select style="width:150px;" data-ui="selecter">
+									<option value="" selected="">All</option>
+								</select>
+							</div>
+							<div class="fl_R">
+								<div class="srch_box">
+									<input type="text" name="keyword" id="keyword" value="" size="20" style="width:250px;">
+									<input type="button" name="button_search" id="button_search" class="btn_search" title="검색">
+								</div>
+							</div>
+						</div><!-- //sort_box -->
+
+						<br /><br /><br />
+
+						<h2 class="p_tit">페이징</h2>
+
+						<!-- paging-box -->
+						<div class="paging-box">
+							<a href="javascript:;" class="btn_arr page_first"></a>
+							<a href="javascript:;" class="btn_arr page_prev"></a>
+							<strong>1</strong>
+							<a href="javascript:;">2</a>
+							<a href="javascript:;">3</a>
+							<a href="javascript:;">4</a>
+							<a href="javascript:;">5</a>
+							<a href="javascript:;">6</a>
+							<a href="javascript:;">7</a>
+							<a href="javascript:;">8</a>
+							<a href="javascript:;">9</a>
+							<a href="javascript:;">10</a>
+							<a href="javascript:;" class="btn_arr page_next"></a>
+							<a href="javascript:;" class="btn_arr page_last"></a>
+						</div><!-- //paging-box -->
+
+						<br /><br /><br />
+
+						<h2 class="p_tit">체크박스</h2>
+
+						<span class="ui-chk">
+							<input class="ui-chk-box" type="checkbox" id="test001">
+							<label class="ui-chk-label" for="test001"><span>테스트001</span></label>
+						</span>
+
+						<span class="ui-chk">
+							<input class="ui-chk-box" type="checkbox" id="test002" checked>
+							<label class="ui-chk-label" for="test002"><span>테스트002</span></label>
+						</span>
+
+						<span class="ui-chk">
+							<input class="ui-chk-box" type="checkbox" id="test003" disabled>
+							<label class="ui-chk-label" for="test003"><span>테스트003</span></label>
+						</span>
+
+						<span class="ui-chk">
+							<input class="ui-chk-box" type="checkbox" id="test004" checked disabled>
+							<label class="ui-chk-label" for="test004"><span>테스트004</span></label>
+						</span>
+						<span class="ui-chk">
+							<input class="ui-chk-box" type="checkbox" id="test005">
+							<label class="ui-chk-label" for="test005"><span class="blind">체크박스만 노출.</span></label>
+						</span>
+
+						<br /><br /><br />
+
+						<h2 class="p_tit">라디오버튼</h2>
+
+						<span class="ui-rad">
+							<input class="ui-rad-box" name="test6-8" type="radio" id="test006">
+							<label class="ui-rad-label" for="test006"><span>테스트006</span></label>
+						</span>
+
+						<span class="ui-rad">
+							<input class="ui-rad-box" name="test6-8" type="radio" id="test007" checked>
+							<label class="ui-rad-label" for="test007"><span>테스트007</span></label>
+						</span>
+
+						<span class="ui-rad">
+							<input class="ui-rad-box" name="test6-8" type="radio" id="test008" disabled>
+							<label class="ui-rad-label" for="test008"><span>테스트008</span></label>
+						</span>
+
+						<span class="ui-rad">
+							<input class="ui-rad-box" name="test9" type="radio" id="test009" checked disabled>
+							<label class="ui-rad-label" for="test009"><span>테스트009</span></label>
+						</span>
+
+						<span class="ui-rad">
+							<input class="ui-rad-box" name="test6-8" type="radio" id="test010">
+							<label class="ui-rad-label" for="test010"><span class="blind">라디오버튼만 노출.</span></label>
+						</span>
+
+						<br /><br /><br />
+
+						<h2 class="p_tit">테이블 스타일01 class="styT_01"</h2>
+
+						<!-- 테이블 스타일 styT_01 -->
+						<div class="styT_01">
+							<table width="100%">
+								<colgroup>
+								    <col width="*"/>
+								    <col width="8.3%"/>
+								    <col width="8.3%"/>
+								    <col width="8.3%"/>
+								    <col width="8.3%"/>
+								    <col width="8.3%"/>
+								    <col width="8.3%"/>
+								    <col width="8.3%"/>
+								    <col width="8.3%"/>
+								    <col width="8.3%"/>
+								    <col width="8.3%"/>
+								    <col width="8.3%"/>
+								</colgroup>
+							    <thead>
+							        <tr>
+							            <th scope="col" rowspan="2" class="bd_R">일자</th>
+							            <th scope="col" colspan="6" class="bd_R bd_B">총구매</th>
+							            <th scope="col" colspan="5" class="bd_B">판매 적중</th>
+							        </tr>
+							        <tr>
+							            <th scope="col" class="ta_r">SESSION</th>
+							            <th scope="col" class="ta_r">TOTAL</th>
+							            <th scope="col" class="ta_r">REAL</th>
+							            <th scope="col" class="ta_r">GIFTCARD</th>
+							            <th scope="col" class="ta_r">POINT</th>
+							            <th scope="col" class="ta_r bd_R">DISCOUNT</th>
+							            <th scope="col" class="ta_r">SESSION</th>
+							            <th scope="col" class="ta_r">TOTAL</th>
+							            <th scope="col" class="ta_r">REAL</th>
+							            <th scope="col" class="ta_r">POINT</th>
+							            <th scope="col" class="ta_r">DISCOUNT</th>
+							        </tr>
+							    </thead>
+							    <tbody>
+							    	<tr>
+							    		<td>2018/04/25</td>
+							    		<td class="ta_r">900</td>
+							    		<td class="ta_r">123,105,356</td>
+							    		<td class="ta_r">52,871,912</td>
+							    		<td class="ta_r">6,676,088</td>
+							    		<td class="ta_r">18,280,300</td>
+							    		<td class="ta_r">45,517,656</td>
+							    		<td class="ta_r">20</td>
+							    		<td class="ta_r">986,000</td>
+							    		<td class="ta_r">667,180</td>
+							    		<td class="ta_r">137,010</td>
+							    		<td class="ta_r">181,810</td>
+							    	</tr>
+							    	<tr>
+							    		<td>2018/04/24</td>
+							    		<td class="ta_r">900</td>
+							    		<td class="ta_r">123,105,356</td>
+							    		<td class="ta_r">52,871,912</td>
+							    		<td class="ta_r">6,676,088</td>
+							    		<td class="ta_r">18,280,300</td>
+							    		<td class="ta_r">45,517,656</td>
+							    		<td class="ta_r">20</td>
+							    		<td class="ta_r">986,000</td>
+							    		<td class="ta_r">667,180</td>
+							    		<td class="ta_r">137,010</td>
+							    		<td class="ta_r">181,810</td>
+							    	</tr>
+							    	<tr>
+							    		<td>2018/04/23</td>
+							    		<td class="ta_r">900</td>
+							    		<td class="ta_r">123,105,356</td>
+							    		<td class="ta_r">52,871,912</td>
+							    		<td class="ta_r">6,676,088</td>
+							    		<td class="ta_r">18,280,300</td>
+							    		<td class="ta_r">45,517,656</td>
+							    		<td class="ta_r">20</td>
+							    		<td class="ta_r">986,000</td>
+							    		<td class="ta_r">667,180</td>
+							    		<td class="ta_r">137,010</td>
+							    		<td class="ta_r">181,810</td>
+							    	</tr>
+							    	<tr>
+							    		<td>2018/04/22</td>
+							    		<td class="ta_r">900</td>
+							    		<td class="ta_r">123,105,356</td>
+							    		<td class="ta_r">52,871,912</td>
+							    		<td class="ta_r">6,676,088</td>
+							    		<td class="ta_r">18,280,300</td>
+							    		<td class="ta_r">45,517,656</td>
+							    		<td class="ta_r">20</td>
+							    		<td class="ta_r">986,000</td>
+							    		<td class="ta_r">667,180</td>
+							    		<td class="ta_r">137,010</td>
+							    		<td class="ta_r">181,810</td>
+							    	</tr>
+							    	<tr>
+							    		<td>2018/04/21</td>
+							    		<td class="ta_r">900</td>
+							    		<td class="ta_r">123,105,356</td>
+							    		<td class="ta_r">52,871,912</td>
+							    		<td class="ta_r">6,676,088</td>
+							    		<td class="ta_r">18,280,300</td>
+							    		<td class="ta_r">45,517,656</td>
+							    		<td class="ta_r">20</td>
+							    		<td class="ta_r">986,000</td>
+							    		<td class="ta_r">667,180</td>
+							    		<td class="ta_r">137,010</td>
+							    		<td class="ta_r">181,810</td>
+							    	</tr>
+							    	<tr>
+							    		<td>2018/04/20</td>
+							    		<td class="ta_r">900</td>
+							    		<td class="ta_r">123,105,356</td>
+							    		<td class="ta_r">52,871,912</td>
+							    		<td class="ta_r">6,676,088</td>
+							    		<td class="ta_r">18,280,300</td>
+							    		<td class="ta_r">45,517,656</td>
+							    		<td class="ta_r">20</td>
+							    		<td class="ta_r">986,000</td>
+							    		<td class="ta_r">667,180</td>
+							    		<td class="ta_r">137,010</td>
+							    		<td class="ta_r">181,810</td>
+							    	</tr>
+							    </tbody>
+							</table>
+						</div><!-- //테이블 스타일 styT_01 -->
+
+						<br /><br /><br />
+
+						<h2 class="p_tit">테이블 스타일02 class="styT_02"</h2>
+
+						<!-- 테이블 스타일 styT_02 -->
+						<div class="styT_02">
+							<table width="100%">
+								<colgroup>
+								    <col width="200"/>
+								    <col width="*"/>
+								</colgroup>
+							    <tbody>
+							        <tr>
+							            <th scope="row">사이트</th>
+							            <td>ap mall</td>
+							        </tr>
+							        <tr>
+							            <th scope="row">이벤트 명</th>
+							            <td>4월 타임어택</td>
+							        </tr>
+							        <tr>
+							            <th scope="row">이벤트 코드</th>
+							            <td>CMC^EVT2018_timeAttack</td>
+							        </tr>
+							        <tr>
+							            <th scope="row">이벤트 기간 / 진행률(%)</th>
+							            <td>2018/04/13 - 2018/04/15 <span class="c_green">진행중 (23.4%)</span></td>
+							        </tr>
+							        <tr>
+							            <th scope="row">이벤트 유형</th>
+							            <td>미정의</td>
+							        </tr>
+							        <tr>
+							            <th scope="row">노출 경로</th>
+							            <td>[PC 진행] [모바일 진행] [앱 진행]</td>
+							        </tr>
+							        <tr>
+							            <th scope="row">쿠폰 / 댓글</th>
+							            <td>-</td>
+							        </tr>
+							        <tr>
+							            <th scope="row">등록자</th>
+							            <td>-</td>
+							        </tr>
+							    </tbody>
+							</table>
+						</div><!-- //테이블 스타일 styT_02 -->
+
+						<br /><br /><br />
+
+						<h2 class="p_tit">테이블 스타일03 class="styT_03"</h2>
+
+						<!-- 테이블 스타일 styT_03 -->
+						<div class="styT_03">
+							<table width="100%">
+								<colgroup>
+								    <col width="200"/>
+								    <col width="*"/>
+								</colgroup>
+							    <tbody>
+							    	<tr>
+							    		<th scope="row">부서</th>
+							    		<td>
+							    			<input type="text" value="BI" style="width:40%;">
+							    		</td>
+							    	</tr>
+							    	<tr>
+							    		<th scope="row">사번</th>
+							    		<td>
+							    			<input type="text" value="111222" readonly style="width:40%;">
+							    			<span class="s_txt">수정불가</span>
+							    		</td>
+							    	</tr>
+							    	<tr>
+							    		<th scope="row">이름</th>
+							    		<td>
+							    			<input type="text" value="홍길동" style="width:40%;">
+							    		</td>
+							    	</tr>
+							    	<tr>
+							    		<th scope="row">비밀번호</th>
+							    		<td>
+							    			<input type="password" style="width:40%;">
+							    			<span class="s_txt">Max 15 characters</span>
+							    		</td>
+							    	</tr>
+							    	<tr>
+							    		<th scope="row">비밀번호 확인</th>
+							    		<td>
+							    			<input type="password" style="width:40%;">
+							    			<span class="s_txt">Max 15 characters</span>
+							    		</td>
+							    	</tr>
+							    	<tr>
+							    		<th scope="row">비밀번호 초기화</th>
+							    		<td>
+							    			<select style="width:60px;" data-ui="selecter">
+							    				<option value="">Y</option>
+							    				<option value="">N</option>
+							    			</select>
+							    			<span class="s_txt">Y or N - 비밀번호 초기화시 Y로 설정해 주세요. (비밀번호 변경 프로세스가 작동 됩니다.)</span>
+							    		</td>
+							    	</tr>
+							    	<tr>
+							    		<th scope="row">직책 또는 담당업무</th>
+							    		<td>
+							    			<input type="text" value="" style="width:40%;">
+							    			<span class="s_txt">예) 팀장 or 담당</span>
+							    		</td>
+							    	</tr>
+							    	<tr>
+							    		<th scope="row">이메일</th>
+							    		<td>
+							    			<input type="text" value="" style="width:40%;">
+							    			<span class="s_txt">예) abc@amorepacific.com</span>
+							    		</td>
+							    	</tr>
+							    	<tr>
+							    		<th scope="row">휴대폰</th>
+							    		<td>
+							    			<input type="text" value="" style="width:40%;">
+							    			<span class="s_txt">예) 01012345678 - 잘못된 입력은 SMS 발송에 문제가 있을 수 있습니다.</span>
+							    		</td>
+							    	</tr>
+							    	<tr>
+							    		<th scope="row">* 권한 - 이벤트</th>
+							    		<td>
+							    			<select style="width:60px;" data-ui="selecter">
+							    				<option value="">Y</option>
+							    				<option value="">N</option>
+							    			</select>
+							    			<span class="s_txt">Y or N - 이벤트 성과 분석에 대한 접속과 조회 권한 여부를 설정 합니다.</span>
+							    		</td>
+							    	</tr>
+							    	<tr>
+							    		<th scope="row">* 권한 - 캠페인</th>
+							    		<td>
+							    			<select style="width:60px;" data-ui="selecter">
+							    				<option value="">Y</option>
+							    				<option value="">N</option>
+							    			</select>
+							    			<span class="s_txt">Y or N - 캠페인 성과 분석에 대한 접속과 조회 권한 여부를 설정 합니다.</span>
+							    		</td>
+							    	</tr>
+							    	<tr>
+							    		<th scope="row">* 권한 - 사용자</th>
+							    		<td>
+							    			<select style="width:60px;" data-ui="selecter">
+							    				<option value="">Y</option>
+							    				<option value="" disabled>S</option>
+							    				<option value="">N</option>
+							    			</select>
+							    			<span class="s_txt">Y or N - 사용자에 대한 접속과 조회 권한 여부를 설정 합니다.</span>
+							    		</td>
+							    	</tr>
+							    	<tr>
+							    		<th scope="row">등록일</th>
+							    		<td>2018-02-07 09:57:34</td>
+							    	</tr>
+							    	<tr>
+							    		<th scope="row">최근 수정일</th>
+							    		<td>2018-04-17 17:01:48</td>
+							    	</tr>
+							    </tbody>
+							</table>
+						</div><!-- //테이블 스타일 styT_03 -->
+
+						<br /><br /><br />
+
+						<h2 class="p_tit">탭메뉴 class="tab-menu"</h2>
+
+						<!-- tab_area -->
+						<div class="tab_area">
+							<ul class="tab-menu">
+								<li class="tab-menu-item">
+									<button type="button" class="tab-menu-btn is-active" data-ui="tab-btn" data-group="sample1" data-target="sample1-1">탭1</button>
+								</li>
+								<li class="tab-menu-item">
+									<button type="button" class="tab-menu-btn" data-ui="tab-btn" data-group="sample1" data-target="sample1-2">탭2</button>
+								</li>
+								<li class="tab-menu-item">
+									<button type="button" class="tab-menu-btn" data-ui="tab-btn" data-group="sample1" data-target="sample1-3">탭3</button>
+								</li>
+								<li class="tab-menu-item">
+									<button type="button" class="tab-menu-btn" data-ui="tab-btn" data-group="sample1" data-target="sample1-4">탭4</button>
+								</li>
+								<li class="tab-menu-item">
+									<button type="button" class="tab-menu-btn" data-ui="tab-btn" data-group="sample1" data-target="sample1-5">탭5</button>
+								</li>
+							</ul>
+
+							<div class="tab_content">
+								<div class="sample1" id="sample1-1">
+									1<img src="../../images/temp/sample_graph_01.jpg" style="max-width:100%;" alt=""><!-- 화면 확인용 샘플이미지 입니다. -->
+								</div>
+								<div class="sample1" id="sample1-2" style="display:none;">
+									2<img src="../../images/temp/sample_graph_02.jpg" style="max-width:100%;" alt=""><!-- 화면 확인용 샘플이미지 입니다. -->
+								</div>
+								<div class="sample1" id="sample1-3" style="display:none;">
+									3<img src="../../images/temp/sample_graph_03.jpg" style="max-width:100%;" alt=""><!-- 화면 확인용 샘플이미지 입니다. -->
+								</div>
+								<div class="sample1" id="sample1-4" style="display:none;">
+									4<img src="../../images/temp/sample_graph_02.jpg" style="max-width:100%;" alt=""><!-- 화면 확인용 샘플이미지 입니다. -->
+								</div>
+								<div class="sample1" id="sample1-5" style="display:none;">
+									5<img src="../../images/temp/sample_graph_03.jpg" style="max-width:100%;" alt=""><!-- 화면 확인용 샘플이미지 입니다. -->
+								</div>
+							</div>
+						</div><!-- tab_area -->
+
+					</div><!-- section -->
+
+					
+				</div><!-- //content -->
+				
+			</div><!-- //container -->	
+		</div><!-- //wrap -->
+
+		<script type="text/javascript" src="../../js/ui-comm.js"></script>
+		<!--[if lt lte 9]>
+		<script type="text/javascript" src="../../js/lib/jquery.placeholder.min.js"></script>
+		<script>
+			var placeholderie9 = function(){
+				var $placeholder = $('html, body').find("input[placeholder], textarea[placeholder]");
+				if ($placeholder.length){
+					console.log('okokokok');
+					$placeholder.placeholder();
+				}else{
+					console.log('nonononon');
+				}
+				return;
+			}
+			placeholderie9();
+			
+		</script>
+		<![endif]-->
+
+	</body>
+
+</html>

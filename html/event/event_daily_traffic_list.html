@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="ko">
+	<head>
+	    <title>사이트 타이틀명</title>
+	    <meta http-equiv="X-UA-Compatible" content="IE=Edge"/>
+	    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+	    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+	    
+	    <!-- css -->
+	    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Nanum+Gothic:400,700&subset=korean"><!-- 구글 웹폰트 -->
+	    <link rel="stylesheet" type="text/css" href="../../css/lib/jquery-ui.css">
+	    <link rel="stylesheet" type="text/css" href="../../css/lib/select2.min.css">
+	    <link rel="stylesheet" type="text/css" href="../../css/admin.css">
+
+	    <!-- js -->
+	    <script type="text/javascript" src="../../js/lib/jquery-3.3.1.min.js"></script>
+	    <script type="text/javascript" src="../../js/lib/jquery-ui.min.js"></script>
+	    <script type="text/javascript" src="../../js/lib/select2.min.js"></script>
+	</head>
+
+	<body>
+		<!-- wrap -->
+		<div class="wrap">
+			<!-- header -->
+			<div class="header">
+				<h1>ADMIN</h1>
+				<ul class="gnb clearfix">
+					<li><a href="javascript:;" class="on">EVENT</a></li>
+					<li><a href="javascript:;">CAMPAIGN</a></li>
+					<li><a href="javascript:;">PUBLIC</a></li>
+					<li><a href="javascript:;">USER</a></li>
+				</ul>
+			</div><!-- //header -->
+
+			<!-- container -->
+			<div class="container">
+				<!-- side-navBox -->
+				<div class="side-navBox">
+					<div class="log_info">
+						<p class="tit">안녕하세요</p>
+						<ul>
+							<li>접속자  : 사번123456 (홍길동)</li>
+							<li>접속시간 : 2018/04/01 12:00:00</li>
+						</ul>
+						<a href="javascript:;" class="btn_show">권한보기</a>
+					</div>
+
+					<div class="nav_area">
+						<p class="tit">이벤트 성과분석</p>
+						<ul class="nav">
+							<li><a href="javascript:;">이벤트 실적</a></li>
+							<li><a href="javascript:;" class="on">일간 이벤트 트래픽</a></li>
+							<li><a href="javascript:;">일간 이벤트 실적</a></li>
+						</ul>
+					</div>
+
+					<div class="bot_area">
+						<a href="javascript:;" class="btn_logout">로그아웃</a>
+
+						<p class="copy_txt">COPYRIGHT ⓒ 회사명<br />All RIGHTS RESERVED.</p>
+					</div>
+				</div><!-- //side-navBox -->
+
+				<!-- content -->
+				<div class="content">
+
+					<!-- section -->
+					<div class="section">
+						<h2 class="p_tit">일간 이벤트 트래픽</h2>
+						<!-- sort_box -->
+						<div class="sort_box clearfix">
+							<div class="fl_L">
+								<input type="text" data-ui="datepicker" value="2018-04-11" maxlength="10" style="width:150px;"> ~ 
+								<input type="text" data-ui="datepicker" value="2018-04-26" maxlength="10" style="width:150px;">
+								<input type="button" name="button_period" id="button_period" data-ui="btnS" class="btn-s v_01" value="기간 조회">
+								<span class="sort_label">사이트</span>
+								<select id="apsite" name="apsite" style="width:150px;" data-ui="selecter">
+									<option value="" selected="">All</option>
+									<option value="사이트1">사이트1</option>
+									<option value="사이트2">사이트2</option>
+									<option value="사이트3">사이트3</option>
+								</select>
+								<span class="sort_label">담당</span>
+								<select id="owner" name="owner" style="width:150px;" data-ui="selecter">
+									<option value="" selected="">All</option>
+								</select>
+							</div>
+							<!-- <div class="fl_R">
+								<div class="srch_box">
+									<input type="text" name="keyword" id="keyword" value="" size="20" style="width:250px;">
+									<input type="button" name="button_search" id="button_search" class="btn_search" title="검색">
+								</div>
+							</div> -->
+						</div><!-- //sort_box -->
+
+						<!-- 테이블 스타일 styT_01 -->
+						<div class="styT_01" style="margin-bottom:30px;">
+							<table width="100%">
+								<colgroup>
+								    <col width="8%"/>
+								    <col width="6%"/>
+								    <col width="6%"/>
+								    <col width="6%"/>
+								    <col width="6%"/>
+								    <col width="6%"/>
+								    <col width="6%"/>
+								    <col width="5%"/>
+								    <col width="5%"/>
+								    <col width="5%"/>
+								    <col width="5%"/>
+								    <col width="5%"/>
+								    <col width="5%"/>
+								    <col width="5%"/>
+								    <col width="5%"/>
+								    <col width="5%"/>
+								    <col width="5%"/>
+								    <col width="5%"/>
+								</colgroup>
+							    <thead>
+							        <tr>
+							            <th scope="col" rowspan="2">일자</th>
+							            <th scope="col" rowspan="2">SESSION</th>
+							            <th scope="col" rowspan="2">UV</th>
+							            <th scope="col" rowspan="2">LV</th>
+							            <th scope="col" rowspan="2">PV</th>
+							            <th scope="col" rowspan="2" class="bd_R">avg.DT</th>
+							            <th scope="col" colspan="2" class="bd_R bd_B">BOUNCE</th>
+							            <th scope="col" colspan="2" class="bd_R bd_B">GENDER</th>
+							            <th scope="col" colspan="8" class="bd_B">AGE</th>
+							        </tr>
+							        <tr>
+							            <th scope="col">SESSION</th>
+							            <th scope="col" class="bd_R">RATE</th>
+							            <th scope="col">M</th>
+							            <th scope="col" class="bd_R">W</th>
+							            <th scope="col">~19%</th>
+							            <th scope="col">20~24</th>
+							            <th scope="col">25~29</th>
+							            <th scope="col">30~34</th>
+							            <th scope="col">35~39</th>
+							            <th scope="col">40~49</th>
+							            <th scope="col">50~59</th>
+							            <th scope="col">60~</th>
+							        </tr>
+							    </thead>
+							    <tbody>
+							    	<tr>
+							    		<td>2018/04/25</td>
+							    		<td>25,208</td>
+							    		<td>23,604</td>
+							    		<td>11,050</td>
+							    		<td>44,536</td>
+							    		<td>26</td>
+							    		<td>7,413</td>
+							    		<td>29%</td>
+							    		<td>6%</td>
+							    		<td>93%</td>
+							    		<td>7%</td>
+							    		<td>13%</td>
+							    		<td>20%</td>
+							    		<td>18%</td>
+							    		<td>16%</td>
+							    		<td>18%</td>
+							    		<td>6%</td>
+							    		<td>2%</td>
+							    	</tr>
+							    	<tr>
+							    		<td>2018/04/24</td>
+							    		<td>25,208</td>
+							    		<td>23,604</td>
+							    		<td>11,050</td>
+							    		<td>44,536</td>
+							    		<td>26</td>
+							    		<td>7,413</td>
+							    		<td>29%</td>
+							    		<td>6%</td>
+							    		<td>93%</td>
+							    		<td>7%</td>
+							    		<td>13%</td>
+							    		<td>20%</td>
+							    		<td>18%</td>
+							    		<td>16%</td>
+							    		<td>18%</td>
+							    		<td>6%</td>
+							    		<td>2%</td>
+							    	</tr>
+							    	<tr>
+							    		<td>2018/04/23</td>
+							    		<td>25,208</td>
+							    		<td>23,604</td>
+							    		<td>11,050</td>
+							    		<td>44,536</td>
+							    		<td>26</td>
+							    		<td>7,413</td>
+							    		<td>29%</td>
+							    		<td>6%</td>
+							    		<td>93%</td>
+							    		<td>7%</td>
+							    		<td>13%</td>
+							    		<td>20%</td>
+							    		<td>18%</td>
+							    		<td>16%</td>
+							    		<td>18%</td>
+							    		<td>6%</td>
+							    		<td>2%</td>
+							    	</tr>
+							    	<tr>
+							    		<td>2018/04/22</td>
+							    		<td>25,208</td>
+							    		<td>23,604</td>
+							    		<td>11,050</td>
+							    		<td>44,536</td>
+							    		<td>26</td>
+							    		<td>7,413</td>
+							    		<td>29%</td>
+							    		<td>6%</td>
+							    		<td>93%</td>
+							    		<td>7%</td>
+							    		<td>13%</td>
+							    		<td>20%</td>
+							    		<td>18%</td>
+							    		<td>16%</td>
+							    		<td>18%</td>
+							    		<td>6%</td>
+							    		<td>2%</td>
+							    	</tr>
+							    	<tr>
+							    		<td>2018/04/21</td>
+							    		<td>25,208</td>
+							    		<td>23,604</td>
+							    		<td>11,050</td>
+							    		<td>44,536</td>
+							    		<td>26</td>
+							    		<td>7,413</td>
+							    		<td>29%</td>
+							    		<td>6%</td>
+							    		<td>93%</td>
+							    		<td>7%</td>
+							    		<td>13%</td>
+							    		<td>20%</td>
+							    		<td>18%</td>
+							    		<td>16%</td>
+							    		<td>18%</td>
+							    		<td>6%</td>
+							    		<td>2%</td>
+							    	</tr>
+							    	<tr>
+							    		<td>2018/04/20</td>
+							    		<td>25,208</td>
+							    		<td>23,604</td>
+							    		<td>11,050</td>
+							    		<td>44,536</td>
+							    		<td>26</td>
+							    		<td>7,413</td>
+							    		<td>29%</td>
+							    		<td>6%</td>
+							    		<td>93%</td>
+							    		<td>7%</td>
+							    		<td>13%</td>
+							    		<td>20%</td>
+							    		<td>18%</td>
+							    		<td>16%</td>
+							    		<td>18%</td>
+							    		<td>6%</td>
+							    		<td>2%</td>
+							    	</tr>
+							    </tbody>
+							</table>
+						</div><!-- //테이블 스타일 styT_01 -->
+
+						<!-- paging-box -->
+						<div class="paging-box">
+							<a href="javascript:;" class="btn_arr page_first"></a>
+							<a href="javascript:;" class="btn_arr page_prev"></a>
+							<strong>1</strong>
+							<a href="javascript:;">2</a>
+							<a href="javascript:;">3</a>
+							<a href="javascript:;">4</a>
+							<a href="javascript:;">5</a>
+							<a href="javascript:;">6</a>
+							<a href="javascript:;">7</a>
+							<a href="javascript:;">8</a>
+							<a href="javascript:;">9</a>
+							<a href="javascript:;">10</a>
+							<a href="javascript:;" class="btn_arr page_next"></a>
+							<a href="javascript:;" class="btn_arr page_last"></a>
+						</div><!-- //paging-box -->
+
+						<ul class="noti_lst">
+							<li>분석 데이터 특성상 모든 사용자의 Unique 특성을 완벽하게 추적하지 못하므로 수치 해석에 유의 하십시요.</li>
+							<li>연령별 통계 부분에서 주고객층인 20세 ~ 40세는 분석 단위를 5세 단위로 세분화했습니다. </li>
+						</ul>
+					</div><!-- section -->
+
+					
+				</div><!-- //content -->
+				
+			</div><!-- //container -->	
+		</div><!-- //wrap -->
+
+		<script type="text/javascript" src="../../js/ui-comm.js"></script>
+	</body>
+
+</html>

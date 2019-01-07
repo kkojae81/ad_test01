@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html lang="ko">
+	<head>
+	    <title>사이트 타이틀명</title>
+	    <meta http-equiv="X-UA-Compatible" content="IE=Edge"/>
+	    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+	    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+	    
+	    <!-- css -->
+	    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Nanum+Gothic:400,700&subset=korean"><!-- 구글 웹폰트 -->
+	    <link rel="stylesheet" type="text/css" href="../../css/lib/jquery-ui.css">
+	    <link rel="stylesheet" type="text/css" href="../../css/lib/select2.min.css">
+	    <link rel="stylesheet" type="text/css" href="../../css/admin.css">
+
+	    <!-- js -->
+	    <script type="text/javascript" src="../../js/lib/jquery-3.3.1.min.js"></script>
+	    <script type="text/javascript" src="../../js/lib/jquery-ui.min.js"></script>
+	    <script type="text/javascript" src="../../js/lib/select2.min.js"></script>
+	</head>
+
+	<body>
+		<!-- wrap -->
+		<div class="wrap">
+			<!-- header -->
+			<div class="header">
+				<h1>ADMIN</h1>
+				<ul class="gnb clearfix">
+					<li><a href="javascript:;" class="on">EVENT</a></li>
+					<li><a href="javascript:;">CAMPAIGN</a></li>
+					<li><a href="javascript:;">PUBLIC</a></li>
+					<li><a href="javascript:;">USER</a></li>
+				</ul>
+			</div><!-- //header -->
+
+			<!-- container -->
+			<div class="container">
+				<!-- side-navBox -->
+				<div class="side-navBox">
+					<div class="log_info">
+						<p class="tit">안녕하세요</p>
+						<ul>
+							<li>접속자  : 사번123456 (홍길동)</li>
+							<li>접속시간 : 2018/04/01 12:00:00</li>
+						</ul>
+						<a href="javascript:;" class="btn_show">권한보기</a>
+					</div>
+
+					<div class="nav_area">
+						<p class="tit">이벤트 성과분석</p>
+						<ul class="nav">
+							<li><a href="javascript:;" class="on">이벤트 실적</a></li>
+							<li><a href="javascript:;">일간 이벤트 트래픽</a></li>
+							<li><a href="javascript:;">일간 이벤트 실적</a></li>
+						</ul>
+					</div>
+
+					<div class="bot_area">
+						<a href="javascript:;" class="btn_logout">로그아웃</a>
+
+						<p class="copy_txt">COPYRIGHT ⓒ 회사명<br />All RIGHTS RESERVED.</p>
+					</div>
+				</div><!-- //side-navBox -->
+
+				<!-- content -->
+				<div class="content">
+
+					<!-- section -->
+					<div class="section">
+						<h2 class="p_tit">이벤트 실적</h2>
+						<!-- sort_box -->
+						<div class="sort_box clearfix">
+							<div class="fl_L">
+								<input type="text" data-ui="datepicker" value="2018-03-26" maxlength="10" style="width:150px;"> ~ 
+								<input type="text" data-ui="datepicker" value="2018-04-25" maxlength="10" style="width:150px;">
+								<input type="button" name="button_period" id="button_period" data-ui="btnS" class="btn-s v_01" value="기간 조회">
+								<span class="sort_label">사이트</span>
+								<select id="apsite" name="apsite" style="width:150px;" data-ui="selecter">
+									<option value="" selected="">All</option>
+									<option value="사이트1">사이트1</option>
+									<option value="사이트2">사이트2</option>
+									<option value="사이트3">사이트3</option>
+								</select>
+								<span class="sort_label">담당</span>
+								<select id="owner" name="owner" style="width:150px;" data-ui="selecter">
+									<option value="" selected="">All</option>
+								</select>
+							</div>
+							<div class="fl_R">
+								<div class="srch_box">
+									<input type="text" name="keyword" id="keyword" value="" size="20" style="width:250px;">
+									<input type="button" name="button_search" id="button_search" class="btn_search" title="검색">
+								</div>
+							</div>
+						</div><!-- //sort_box -->
+
+						<!-- 테이블 스타일 styT_01 -->
+						<div class="styT_01">
+							<table width="100%">
+								<colgroup>
+								    <col width="5%"/>
+								    <col width="6%"/>
+								    <col width="*"/>
+								    <col width="14%"/>
+								    <col width="6.5%"/>
+								    <col width="6.5%"/>
+								    <col width="6.5%"/>
+								    <col width="6.5%"/>
+								    <col width="6.5%"/>
+								    <col width="7.6%"/>
+								    <col width="7.6%"/>
+								    <col width="10%"/>
+								</colgroup>
+							    <thead>
+							        <tr>
+							            <th scope="col" rowspan="2">#</th>
+							            <th scope="col" rowspan="2">사이트</th>
+							            <th scope="col" rowspan="2">이벤트 명</th>
+							            <th scope="col" rowspan="2" class="bd_R">기간</th>
+							            <th scope="col" colspan="5" class="bd_R bd_B">누적 SESSION</th>
+							            <th scope="col" colspan="2" class="bd_B">누적 실적 금액</th>
+							            <th scope="col" rowspan="2" class="bd_L">상태</th>
+							        </tr>
+							        <tr>
+							            <th scope="col">SESSION</th>
+							            <th scope="col">구매수</th>
+							            <th scope="col">구매%</th>
+							            <th scope="col">적중수</th>
+							            <th scope="col" class="bd_R">적중%</th>
+							            <th scope="col" class="ta_r">구매액</th>
+							            <th scope="col" class="ta_r">적중액</th>
+							        </tr>
+							    </thead>
+							    <tbody>
+							    	<tr>
+							    		<td>20</td>
+							    		<td>사이트명</td>
+							    		<td class="ta_l"><a href="#"><b>이벤트명</b></a></td>
+							    		<td>2018/04/09 - 2018/04/30</td>
+							    		<td>13,856</td>
+							    		<td>2,235</td>
+							    		<td>7.56%</td>
+							    		<td>7.56%</td>
+							    		<td>7.56%</td>
+							    		<td class="ta_r">52,194,709</td>
+							    		<td class="ta_r">52,194,709</td>
+							    		<td><b class="c_green">진행중 (45.24%)</b></td>
+							    	</tr>
+							    	<tr>
+							    		<td>19</td>
+							    		<td>사이트명</td>
+							    		<td class="ta_l"><a href="#"><b>이벤트명 제목 두줄 테스트 이벤트명 제목 두줄 테스트</b></a></td>
+							    		<td>2018/04/09 - 2018/04/15</td>
+							    		<td>81,856</td>
+							    		<td>567</td>
+							    		<td>3.25%</td>
+							    		<td>3.25%</td>
+							    		<td>3.25%</td>
+							    		<td class="ta_r">0</td>
+							    		<td class="ta_r">0</td>
+							    		<td><b class="c_green">진행중 (70.37%)</b></td>
+							    	</tr>
+							    	<tr>
+							    		<td>18</td>
+							    		<td>사이트명</td>
+							    		<td class="ta_l"><a href="#"><b>이벤트명</b></a></td>
+							    		<td>2018/04/09 - 2018/04/15</td>
+							    		<td>513,856</td>
+							    		<td>35</td>
+							    		<td>0%</td>
+							    		<td>0%</td>
+							    		<td>0%</td>
+							    		<td class="ta_r">0</td>
+							    		<td class="ta_r">0</td>
+							    		<td><b class="c_green">진행중 (70.37%)</b></td>
+							    	</tr>
+							    	<tr>
+							    		<td>17</td>
+							    		<td>사이트명</td>
+							    		<td class="ta_l"><a href="#"><b>이벤트명</b></a></td>
+							    		<td>2018/02/02 -2018/02/04</td>
+							    		<td>13,856</td>
+							    		<td>1,0524</td>
+							    		<td>7.56%</td>
+							    		<td>7.56%</td>
+							    		<td>7.56%</td>
+							    		<td class="ta_r">0</td>
+							    		<td class="ta_r">0</td>
+							    		<td><b class="c_green">진행중 (100%)</b></td>
+							    	</tr>
+							    	<tr>
+							    		<td>16</td>
+							    		<td>사이트명</td>
+							    		<td class="ta_l"><a href="#"><b>이벤트명</b></a></td>
+							    		<td>2018/02/02 -2018/02/04</td>
+							    		<td>113,856</td>
+							    		<td>52,2659</td>
+							    		<td>3.25%</td>
+							    		<td>3.25%</td>
+							    		<td>3.25%</td>
+							    		<td class="ta_r">0</td>
+							    		<td class="ta_r">0</td>
+							    		<td>이벤트 종료</td>
+							    	</tr>
+							    	<tr>
+							    		<td>15</td>
+							    		<td>사이트명</td>
+							    		<td class="ta_l"><a href="#"><b>이벤트명</b></a></td>
+							    		<td>2018/02/02 -2018/02/04</td>
+							    		<td>45,756</td>
+							    		<td>2,235</td>
+							    		<td>0%</td>
+							    		<td>0%</td>
+							    		<td>0%</td>
+							    		<td class="ta_r">8,946,104</td>
+							    		<td class="ta_r">8,946,104</td>
+							    		<td>이벤트 종료</td>
+							    	</tr>
+							    	<tr>
+							    		<td>14</td>
+							    		<td>사이트명</td>
+							    		<td class="ta_l"><a href="#"><b>이벤트명</b></a></td>
+							    		<td>2018/02/02 -2018/02/04</td>
+							    		<td>13,856</td>
+							    		<td>567</td>
+							    		<td>7.56%</td>
+							    		<td>7.56%</td>
+							    		<td>7.56%</td>
+							    		<td class="ta_r">28,403,286</td>
+							    		<td class="ta_r">28,403,286</td>
+							    		<td>이벤트 종료</td>
+							    	</tr>
+							    	<tr>
+							    		<td>13</td>
+							    		<td>사이트명</td>
+							    		<td class="ta_l"><a href="#"><b>이벤트명</b></a></td>
+							    		<td>2018/02/02 -2018/02/04</td>
+							    		<td>81,856</td>
+							    		<td>35</td>
+							    		<td>3.25%</td>
+							    		<td>3.25%</td>
+							    		<td>3.25%</td>
+							    		<td class="ta_r">45,181,406</td>
+							    		<td class="ta_r">45,181,406</td>
+							    		<td>이벤트 종료</td>
+							    	</tr>
+							    	<tr>
+							    		<td>12</td>
+							    		<td>사이트명</td>
+							    		<td class="ta_l"><a href="#"><b>이벤트명</b></a></td>
+							    		<td>2018/02/02 -2018/02/04</td>
+							    		<td>513,856</td>
+							    		<td>1,0524</td>
+							    		<td>0%</td>
+							    		<td>0%</td>
+							    		<td>0%</td>
+							    		<td class="ta_r">74,077,886</td>
+							    		<td class="ta_r">74,077,886</td>
+							    		<td>이벤트 종료</td>
+							    	</tr>
+							    	<tr>
+							    		<td>11</td>
+							    		<td>사이트명</td>
+							    		<td class="ta_l"><a href="#"><b>이벤트명</b></a></td>
+							    		<td>2018/02/02 -2018/02/04</td>
+							    		<td>13,856</td>
+							    		<td>2,2659</td>
+							    		<td>7.56%</td>
+							    		<td>7.56%</td>
+							    		<td>7.56%</td>
+							    		<td class="ta_r">23,110,000</td>
+							    		<td class="ta_r">23,110,000</td>
+							    		<td><b class="c_green">진행중 (00.60%)</b></td>
+							    	</tr>
+							    	<tr>
+							    		<td>10</td>
+							    		<td>사이트명</td>
+							    		<td class="ta_l"><a href="#"><b>이벤트명</b></a></td>
+							    		<td>2018/02/02 -2018/02/04</td>
+							    		<td>113,856</td>
+							    		<td>2,235</td>
+							    		<td>3.25%</td>
+							    		<td>3.25%</td>
+							    		<td>3.25%</td>
+							    		<td class="ta_r">10,385,151</td>
+							    		<td class="ta_r">10,385,151</td>
+							    		<td>이벤트 종료</td>
+							    	</tr>
+							    	<tr>
+							    		<td>9</td>
+							    		<td>사이트명</td>
+							    		<td class="ta_l"><a href="#"><b>이벤트명</b></a></td>
+							    		<td>2018/02/02 -2018/02/04</td>
+							    		<td>13,856</td>
+							    		<td>567</td>
+							    		<td>0%</td>
+							    		<td>0%</td>
+							    		<td>0%</td>
+							    		<td class="ta_r">0</td>
+							    		<td class="ta_r">0</td>
+							    		<td>이벤트 종료</td>
+							    	</tr>
+							    	<tr>
+							    		<td>8</td>
+							    		<td>사이트명</td>
+							    		<td class="ta_l"><a href="#"><b>이벤트명</b></a></td>
+							    		<td>2018/02/02 -2018/02/04</td>
+							    		<td>81,856</td>
+							    		<td>355</td>
+							    		<td>7.56%</td>
+							    		<td>7.56%</td>
+							    		<td>7.56%</td>
+							    		<td class="ta_r">45,111,111</td>
+							    		<td class="ta_r">45,111,111</td>
+							    		<td>이벤트 종료</td>
+							    	</tr>
+							    	<tr>
+							    		<td>7</td>
+							    		<td>사이트명</td>
+							    		<td class="ta_l"><a href="#"><b>이벤트명</b></a></td>
+							    		<td>2018/02/02 -2018/02/04</td>
+							    		<td>513,856</td>
+							    		<td>254,210</td>
+							    		<td>3.25%</td>
+							    		<td>3.25%</td>
+							    		<td>3.25%</td>
+							    		<td class="ta_r">0</td>
+							    		<td class="ta_r">0</td>
+							    		<td>이벤트 종료</td>
+							    	</tr>
+							    	<tr>
+							    		<td>6</td>
+							    		<td>사이트명</td>
+							    		<td class="ta_l"><a href="#"><b>이벤트명</b></a></td>
+							    		<td>2018/02/02 -2018/02/04</td>
+							    		<td>13,856</td>
+							    		<td>1,0524</td>
+							    		<td>0%</td>
+							    		<td>0%</td>
+							    		<td>0%</td>
+							    		<td class="ta_r">52,194,709</td>
+							    		<td class="ta_r">52,194,709</td>
+							    		<td>이벤트 종료</td>
+							    	</tr>
+							    	<tr>
+							    		<td>5</td>
+							    		<td>사이트명</td>
+							    		<td class="ta_l"><a href="#"><b>이벤트명</b></a></td>
+							    		<td>2018/02/02 -2018/02/04</td>
+							    		<td>153,856</td>
+							    		<td>52,2659</td>
+							    		<td>7.56%</td>
+							    		<td>7.56%</td>
+							    		<td>7.56%</td>
+							    		<td class="ta_r">0</td>
+							    		<td class="ta_r">0</td>
+							    		<td>이벤트 종료</td>
+							    	</tr>
+							    	<tr>
+							    		<td>4</td>
+							    		<td>사이트명</td>
+							    		<td class="ta_l"><a href="#"><b>이벤트명</b></a></td>
+							    		<td>2018/02/02 -2018/02/04</td>
+							    		<td>45,756</td>
+							    		<td>2567</td>
+							    		<td>3.25%</td>
+							    		<td>3.25%</td>
+							    		<td>3.25%</td>
+							    		<td class="ta_r">0</td>
+							    		<td class="ta_r">0</td>
+							    		<td>이벤트 종료</td>
+							    	</tr>
+							    	<tr>
+							    		<td>3</td>
+							    		<td>사이트명</td>
+							    		<td class="ta_l"><a href="#"><b>이벤트명</b></a></td>
+							    		<td>2018/02/02 -2018/02/04</td>
+							    		<td>13,856</td>
+							    		<td>355</td>
+							    		<td>0%</td>
+							    		<td>0%</td>
+							    		<td>0%</td>
+							    		<td class="ta_r">0</td>
+							    		<td class="ta_r">0</td>
+							    		<td>이벤트 종료</td>
+							    	</tr>
+							    	<tr>
+							    		<td>2</td>
+							    		<td>사이트명</td>
+							    		<td class="ta_l"><a href="#"><b>이벤트명</b></a></td>
+							    		<td>2018/02/02 -2018/02/04</td>
+							    		<td>81,856</td>
+							    		<td>1,0524</td>
+							    		<td>7.56%</td>
+							    		<td>7.56%</td>
+							    		<td>7.56%</td>
+							    		<td class="ta_r">0</td>
+							    		<td class="ta_r">0</td>
+							    		<td>이벤트 종료</td>
+							    	</tr>
+							    	<tr>
+							    		<td>1</td>
+							    		<td>사이트명</td>
+							    		<td class="ta_l"><a href="#"><b>이벤트명</b></a></td>
+							    		<td>2018/02/02 -2018/02/04</td>
+							    		<td>513,856</td>
+							    		<td>52,2659</td>
+							    		<td>3.25%</td>
+							    		<td>3.25%</td>
+							    		<td>3.25%</td>
+							    		<td class="ta_r">8,946,104</td>
+							    		<td class="ta_r">8,946,104</td>
+							    		<td>이벤트 종료</td>
+							    	</tr>
+							    </tbody>
+							</table>
+						</div><!-- //테이블 스타일 styT_01 -->
+
+						<div class="ta_r" style="padding-top:10px;">
+							<input type="submit" name="excel_download" id="excel_download" data-ui="btnS" class="btn-xs v_xls" value="엑셀 다운로드">
+						</div>
+
+						<!-- paging-box -->
+						<div class="paging-box">
+							<a href="javascript:;" class="btn_arr page_first"></a>
+							<a href="javascript:;" class="btn_arr page_prev"></a>
+							<strong>1</strong>
+							<a href="javascript:;">2</a>
+							<a href="javascript:;">3</a>
+							<a href="javascript:;">4</a>
+							<a href="javascript:;">5</a>
+							<a href="javascript:;">6</a>
+							<a href="javascript:;">7</a>
+							<a href="javascript:;">8</a>
+							<a href="javascript:;">9</a>
+							<a href="javascript:;">10</a>
+							<a href="javascript:;" class="btn_arr page_next"></a>
+							<a href="javascript:;" class="btn_arr page_last"></a>
+						</div><!-- //paging-box -->
+
+						<ul class="noti_lst">
+							<li>해당 사용자의 상세 정보 및 수정/삭제를 위해서는 사번 또는 이름을 클릭 하세요.</li>
+							<li>신규 사용자의 등록을 위해서는 좌측 사용자 등록 버튼 메뉴를 이용 하세요. </li>
+							<li>검색은 사번과 이름 검색을 지원합니다.(본문 우측 상단) </li>
+						</ul>
+					</div><!-- section -->
+
+					
+				</div><!-- //content -->
+				
+			</div><!-- //container -->	
+		</div><!-- //wrap -->
+
+		<script type="text/javascript" src="../../js/ui-comm.js"></script>
+	</body>
+
+</html>
